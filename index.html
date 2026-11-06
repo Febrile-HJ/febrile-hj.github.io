@@ -123,6 +123,20 @@ section.block{padding:96px 0}
 .btn-gold{margin-top:22px;background:#d4b47a;color:#141c2e}
 .btn-gold:hover{background:#e2c48c}
 @media (max-width:900px){.spot{grid-template-columns:1fr}.spot-img img{aspect-ratio:2/1;height:auto}.spot-body{padding:26px 22px}.stats b{font-size:19px}}
+
+/* 2026-11-06: 프로네시스 소개를 지식브레인 카드 바로 아래에 */
+.flow .w-vt{grid-column:1;grid-row:1}.flow .w-ph{grid-column:2;grid-row:1}.flow .w-ct{grid-column:3;grid-row:1}
+.flow .spot{grid-column:1/-1;grid-row:2;margin-top:6px}
+.w-ph{position:relative}
+.w-ph::after{content:"";position:absolute;left:50%;bottom:-23px;transform:translateX(-50%);border:11px solid transparent;border-top-color:#141c2e;z-index:3}
+.w-vt::after,.w-ct::before{content:"›";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--cream);color:var(--brown);font-weight:800;display:grid;place-items:center;z-index:2;transform:translateY(-50%)}
+.w-vt::after{right:-21px}.w-ct::before{left:-21px}
+@media (max-width:900px){
+ .flow .w-vt,.flow .w-ph,.flow .w-ct,.flow .spot{grid-column:auto;grid-row:auto}
+ .flow .spot{margin-top:0}
+ .w-vt::after{right:auto;left:50%;top:auto;bottom:-21px;transform:translateX(-50%) rotate(90deg)}
+ .w-ct::before{left:50%;top:-21px;transform:translateX(-50%) rotate(90deg)}
+}
 /* experience */
 .exp{background:var(--navy);color:#f4ede2}
 .exp .label{color:var(--brown3)}
@@ -231,30 +245,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
       <div class="flow-title reveal"><span>흐름</span>생각을 쏟아내고, 지식으로 쌓고, 콘텐츠로 내보냅니다</div>
       <div class="flow">
-        <article class="work reveal">
+        <article class="work reveal w-vt">
           <span class="tag">생각 쏟아내기</span>
           <h4>Voice-Typing</h4>
           <div class="id">AI 음성 타이핑 · 회의 기록 앱</div>
           <p class="motto">떠오르는 대로 생각을 쏟아내세요.<br>생각을 핵심으로 정리합니다.</p>
           <details><summary>자세히</summary><ul><li>말하면 군말과 고친 부분을 정리해 바로 입력</li><li>회의를 녹음하면서 회의록을 바로 기록</li><li>나만의 사전으로 이름·용어 표기 고정</li></ul></details>
         </article>
-        <span class="arrow a1">›</span>
-        <article class="work reveal">
+        <article class="work reveal w-ph">
           <span class="tag">지식으로 쌓기</span>
           <h4>프로네시스 <small>Phronesis</small></h4>
           <div class="id">나만의 지식베이스를 구축하는 시스템</div>
           <p class="desc">노트로 쌓고, 뜻으로 찾고, 관계로 잇는 조셉의 지식브레인. 문서 1,990개가 서로 연결되어 있습니다.</p>
           <a class="more" href="#phronesis">지금 모습 보기 ↓</a>
         </article>
-        <span class="arrow a2">›</span>
-        <article class="work reveal">
-          <span class="tag">콘텐츠로 내보내기</span>
-          <h4>콘텐츠 발행 자동화</h4>
-          <div class="id">나로부터 출발하는 콘텐츠 발행 자동화</div>
-          <p class="desc">내 경험과 생각을 재료로, AI가 글을 만들고 발행까지 이어줍니다.</p>
-        </article>
-      </div>
-
       <div class="spot reveal" id="phronesis">
         <div class="spot-img"><img src="assets/phronesis.jpg" alt="조셉의 지식 프로네시스 첫 화면" loading="lazy" width="1200" height="600"></div>
         <div class="spot-body">
@@ -273,6 +277,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <p class="spot-meta">GraphRAG 4단계 작동 · PostgreSQL + pgvector · v0.1.28 (2026.10.30 기준)</p>
           <a class="btn btn-gold" href="/phronesis/" target="_blank" rel="noopener">지식브레인 구조 보기 ↗</a>
         </div>
+      </div>
+        <article class="work reveal w-ct">
+          <span class="tag">콘텐츠로 내보내기</span>
+          <h4>콘텐츠 발행 자동화</h4>
+          <div class="id">나로부터 출발하는 콘텐츠 발행 자동화</div>
+          <p class="desc">내 경험과 생각을 재료로, AI가 글을 만들고 발행까지 이어줍니다.</p>
+        </article>
       </div>
 
       <div class="sys-title reveal"><span>시스템</span>일을 대신하고, 판단을 돕습니다</div>
