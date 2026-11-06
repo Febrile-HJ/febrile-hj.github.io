@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>조셉의 지식 프로네시스</title>
 <meta property="og:type" content="website"><meta property="og:site_name" content="Joseph’s Lab"><meta property="og:locale" content="ko_KR"><meta property="og:title" content="조셉의 지식 프로네시스 · Joseph 하준"><meta property="og:description" content="조셉의 지식브레인 개념 지도"><meta property="og:url" content="https://blessalpha.com/phronesis/"><meta property="og:image" content="https://blessalpha.com/phronesis/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="600"><meta property="og:image:type" content="image/jpeg"><meta name="description" content="조셉의 지식브레인 개념 지도">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
@@ -86,7 +86,7 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stro
 .clx{cursor:pointer}
 .brandL .vs .pubtag{color:#9cc3ff;letter-spacing:.06em;font-size:1.1em;margin-left:10px}
 /* 2026-11-06 Aside: 폰 화면 맞춤 + 두 손가락 확대 */
-#g{touch-action:none}
+html,body{touch-action:pan-x pan-y;overscroll-behavior:none}#g,#g *{touch-action:none}
 @media (max-width:760px){
  .top{height:52px}
  .brandL{margin:0 6px 0 4px}.brandL .bt{font-size:21px}.brandL .vs{display:none}
@@ -330,6 +330,10 @@ function zoomStep(now){if(!zt){zRaf=0;return;}const dt=Math.min(50,zLast?now-zLa
  if(!fin)zRaf=requestAnimationFrame(zoomStep);else{zRaf=0;zt=null;zLast=0;clearTimeout(zFull);render();}}
 svg.addEventListener('wheel',e=>{e.preventDefault();camUser=true;const r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,dy=e.deltaMode===1?e.deltaY*33:e.deltaY,base=zt?zt.k:view.k;
  zt={k:Math.min(4,Math.max(0.2,base*Math.exp(-dy*0.0016))),mx,my};if(!zRaf){zLast=0;zRaf=requestAnimationFrame(zoomStep);}},{passive:false});
+
+ // 2026-11-06 Aside: 브라우저 전체 확대를 막고, 두 손가락 동작은 지식맵만 받게 한다
+ document.addEventListener('touchmove',e=>{if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});
+ ['gesturestart','gesturechange','gestureend'].forEach(t=>document.addEventListener(t,e=>e.preventDefault(),{passive:false}));
  // 2026-11-06 Aside: 두 손가락으로 벌리고 오므려 확대·축소 (폰·태블릿)
  (function(){const pts=new Map();let pz=null;
   const two=()=>{const a=[...pts.values()];return{x:(a[0].x+a[1].x)/2,y:(a[0].y+a[1].y)/2,d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};};
