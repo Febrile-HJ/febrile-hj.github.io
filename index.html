@@ -2,20 +2,317 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>블레스알파랩 BlessAlpha Lab</title>
-<meta name="description" content="블레스알파랩 · AI 교육 & 강의 / 업무 자동화 컨설팅">
-<meta property="og:title" content="조하준 소장 | 블레스알파랩 BlessAlpha Lab">
-<meta property="og:description" content="AI 교육 &amp; 강의 / 업무 자동화 컨설팅 · 눌러서 연락처 저장">
-<meta property="og:url" content="https://blessalpha.com/card/">
-<meta property="og:image" content="https://blessalpha.com/card/og.png?v=5">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>블레스알파랩 BlessAlpha Lab | 바로 쓰는 AI 교육과 업무 자동화</title>
+<meta name="description" content="현장에서 바로 쓰는 AI 실무 교육과 반복 업무를 덜어 주는 자동화 구축. 블레스알파랩 조하준 소장.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="블레스알파랩 | 바로 쓰는 AI 교육과 업무 자동화">
+<meta property="og:description" content="AI 교육 &amp; 강의 / 업무 자동화 컨설팅 · 조하준 소장">
+<meta property="og:url" content="https://blessalpha.com/">
+<meta property="og:image" content="https://blessalpha.com/assets/og.png?v=1">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta http-equiv="refresh" content="0; url=/card/">
-<link rel="canonical" href="https://blessalpha.com/card/">
-<script>location.replace('/card/' + location.search);</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a4f37'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Georgia,serif' fill='%23f4ede2' text-anchor='middle'%3EBA%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--cream:#f4ede2;--paper:#fbf8f2;--brown:#7a4f37;--brown2:#a8754f;--brown3:#c9a27e;--ink:#2b211b;--ink2:#4a3b31;--muted:#85766a;--line:#e4d8c7;--accent:#e2a03f;--navy:#1f2b3d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(244,237,226,.86);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px}
+.mono{width:34px;height:34px;border-radius:9px;background:var(--brown);color:var(--cream);display:grid;place-items:center;font-family:Georgia,"Times New Roman",serif;font-size:15px}
+.logo b{font-size:16px;font-weight:800;letter-spacing:-.01em}
+.logo small{display:block;font-size:11px;color:var(--muted);letter-spacing:.06em;line-height:1.1}
+.menu{display:flex;gap:28px;font-size:15px;font-weight:600;color:var(--ink2)}
+.menu a:hover{color:var(--brown)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--brown);color:#fff;box-shadow:0 10px 24px -12px rgba(122,79,55,.8)}
+.btn-dark:hover{background:#6a432e}
+.btn-line{border:1.5px solid var(--brown);color:var(--brown);background:transparent}
+.nav .btn{padding:9px 16px;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:24px;min-height:560px;padding-top:40px;padding-bottom:40px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--brown);text-transform:uppercase}
+.eyebrow:before{content:"";width:28px;height:1.5px;background:var(--brown)}
+h1{margin:18px 0 18px;font-size:clamp(34px,5.2vw,58px);line-height:1.18;letter-spacing:-.03em;font-weight:800}
+h1 em{font-style:normal;color:var(--brown);position:relative;white-space:nowrap}
+h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.28em;background:rgba(226,160,63,.32);z-index:-1;border-radius:3px}
+.lead{font-size:clamp(16px,1.6vw,19px);color:var(--ink2);max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.who{display:flex;align-items:center;gap:12px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);max-width:460px}
+.who b{font-size:18px}
+.who span{color:var(--muted);font-size:14px}
+.who .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.art{position:relative;display:flex;justify-content:center;align-items:flex-end;height:100%}
+.art:before{content:"";position:absolute;width:min(420px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 45%,#fff8ec 0%,#efdcc2 60%,rgba(239,220,194,0) 72%);bottom:6%;left:50%;transform:translateX(-50%)}
+.art:after{content:"";position:absolute;width:min(470px,98%);aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(168,117,79,.35);bottom:2%;left:50%;transform:translateX(-50%)}
+.art img{position:relative;z-index:1;height:min(480px,62vh);width:auto;filter:drop-shadow(0 18px 24px rgba(74,48,30,.22))}
+.bubble{position:absolute;z-index:2;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:600;box-shadow:0 12px 24px -16px rgba(74,48,30,.4);white-space:nowrap}
+.bubble.b1{top:14%;left:0}
+.bubble.b2{top:44%;right:-4px}
+.bubble i{font-style:normal;color:var(--brown)}
+/* sections */
+section.block{padding:96px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;letter-spacing:-.025em;font-weight:800}
+.sec-head p{color:var(--muted);max-width:420px}
+.label{font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--brown);margin-bottom:12px}
+/* what i do */
+.do{background:var(--paper)}
+.do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.do-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 28px;position:relative;overflow:hidden}
+.do-card .ic{width:48px;height:48px;border-radius:14px;background:var(--cream);display:grid;place-items:center;margin-bottom:22px}
+.do-card .ic svg{width:24px;height:24px;stroke:var(--brown);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.do-card h3{font-size:14px;letter-spacing:.08em;color:var(--brown);font-weight:800;margin-bottom:6px}
+.do-card p{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.01em}
+.do-card .num{position:absolute;right:22px;top:18px;font-family:Georgia,serif;font-size:44px;color:#f1e7d8}
+/* works */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.flow-title,.sys-title{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700;color:var(--ink2);margin:0 0 16px}
+.flow-title span,.sys-title span{font-size:12px;font-weight:800;color:#fff;background:var(--brown);border-radius:999px;padding:3px 10px;letter-spacing:.04em}
+.sys-title{margin-top:44px}
+.work{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 26px 24px;display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s}
+.work:hover{transform:translateY(-3px);box-shadow:0 20px 40px -26px rgba(74,48,30,.45)}
+.work .tag{align-self:flex-start;font-size:12px;font-weight:700;color:var(--brown);background:var(--cream);border-radius:999px;padding:4px 10px;margin-bottom:16px}
+.work h4{font-size:22px;font-weight:800;letter-spacing:-.01em}
+.work h4 small{font-size:13px;color:var(--muted);font-weight:600;margin-left:6px}
+.work .id{margin-top:6px;font-size:16px;font-weight:700;color:var(--brown)}
+.work .desc{margin-top:12px;color:var(--ink2);font-size:15px}
+.work .motto{margin-top:12px;font-size:16px;font-weight:600;color:var(--ink);border-left:3px solid var(--accent);padding-left:12px;line-height:1.55}
+.work .note{margin-top:auto;padding-top:16px;font-size:12px;color:var(--muted)}
+.work details{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.work summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--brown);list-style:none}
+.work summary::-webkit-details-marker{display:none}
+.work summary:after{content:" +";}
+.work details[open] summary:after{content:" −";}
+.work ul{margin-top:10px;padding-left:0;list-style:none;display:grid;gap:6px}
+.work li{font-size:14px;color:var(--ink2);padding-left:14px;position:relative}
+.work li:before{content:"";position:absolute;left:0;top:.65em;width:5px;height:5px;border-radius:50%;background:var(--brown3)}
+.arrow{position:absolute;top:50%;width:20px;height:20px;transform:translate(-50%,-50%);z-index:2;background:var(--cream);border-radius:50%;display:grid;place-items:center;color:var(--brown);font-weight:800}
+.arrow.a1{left:calc(33.333% - 0px)}
+.arrow.a2{left:calc(66.666% + 0px)}
+.sys{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* experience */
+.exp{background:var(--navy);color:#f4ede2}
+.exp .label{color:var(--brown3)}
+.exp .sec-head p{color:#b9b2a8}
+.exp-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.exp-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid rgba(244,237,226,.14)}
+.exp-item b{flex:0 0 132px;color:var(--brown3);font-size:15px}
+.exp-item span{font-size:17px;font-weight:500}
+/* contact */
+.contact .box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:48px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.contact h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;letter-spacing:-.025em;font-weight:800}
+.contact p.sub{margin-top:12px;color:var(--ink2)}
+.contact .cta{margin-top:26px}
+.clist{display:grid;gap:4px}
+.crow{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow .k{flex:0 0 56px;font-size:13px;color:var(--muted);padding-top:2px}
+.crow .v{font-size:16px;font-weight:600}
+.crow .v em{display:block;font-style:normal;font-size:12px;letter-spacing:.1em;color:var(--brown);font-weight:800}
+a.crow:hover .v{color:var(--brown)}
+footer{padding:36px 0 40px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* mobile bar */
+.mbar{display:none}
+@media (max-width:900px){
+  .menu{display:none}
+  .hero .wrap{grid-template-columns:1fr;min-height:auto;padding-top:28px;gap:8px}
+  .art{order:-1;height:auto;padding-top:10px}
+  .art img{height:300px}
+  .art:before{width:280px}
+  .art:after{width:310px}
+  .bubble{font-size:12px;padding:8px 11px}
+  .bubble.b1{top:8%;left:2%}
+  .bubble.b2{top:52%;right:2%}
+  .who{margin-top:26px}
+  section.block{padding:72px 0}
+  .do-grid,.flow,.sys{grid-template-columns:1fr}
+  .arrow{left:50%!important;top:auto;transform:translate(-50%,-50%) rotate(90deg)}
+  .arrow.a1{top:calc(33.333% + 4px)}
+  .arrow.a2{top:calc(66.666% + 6px)}
+  .exp-list{grid-template-columns:1fr}
+  .exp-item{flex-direction:column;gap:4px}
+  .exp-item b{flex:none}
+  .contact .box{grid-template-columns:1fr;padding:30px 22px;gap:24px}
+  footer{padding-bottom:110px}
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;background:rgba(43,33,27,.94);border-radius:18px;padding:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 4px;border-radius:12px;color:#f4ede2;font-size:14px;font-weight:700}
+  .mbar a.main{background:var(--brown)}
+  .mbar svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
 </head>
-<body style="font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;background:#f3f1ec;color:#1b2430;text-align:center;padding-top:30vh">
-<p>블레스알파랩 명함으로 이동 중이에요… <a href="/card/">바로 가기</a></p>
+<body>
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="mono">BA</span><span><b>블레스알파랩</b><small>BlessAlpha Lab</small></span></a>
+    <nav class="menu"><a href="#do">하는 일</a><a href="#works">만든 것</a><a href="#exp">경력</a><a href="#contact">문의</a></nav>
+    <a class="btn btn-dark" href="#contact">문의하기</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">AI 교육 &amp; 업무 자동화</div>
+        <h1>바로 쓰는 <em>AI 교육</em>과<br><em>업무 자동화</em></h1>
+        <p class="lead">현장에서 바로 쓰는 AI 실무 교육부터, 반복 업무를 덜어 주는 자동화 구축까지. 직접 만들고 매일 쓰는 도구로 가르치고 만듭니다.</p>
+        <div class="cta">
+          <a class="btn btn-dark" href="#contact">강의 · 컨설팅 문의</a>
+          <a class="btn btn-line" href="#works">만든 것 보기</a>
+        </div>
+        <div class="who"><span class="dot"></span><b>조하준 소장</b><span>Joseph Cho · 블레스알파랩</span></div>
+      </div>
+      <div class="art">
+        <div class="bubble b1">생각은 <i>쏟아내고</i></div>
+        <div class="bubble b2">일은 <i>AI가</i></div>
+        <img src="assets/joseph.png" alt="조하준 소장 캐릭터" width="572" height="900">
+      </div>
+    </div>
+  </section>
+
+  <section class="block do" id="do">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="label">WHAT I DO</div><h2>세 가지 일을 합니다</h2></div>
+        <p>배우고, 맡기고, 알리는 일. 회사와 개인이 AI를 실제 업무에 쓰도록 돕습니다.</p>
+      </div>
+      <div class="do-grid">
+        <div class="do-card reveal"><span class="num">01</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v5c0 1.7 2.7 3 6 3s6-1.3 6-3V9"/><path d="M22 7v6"/></svg></div><h3>AI EDUCATION</h3><p>현장에서 바로 쓰는<br>AI 실무 교육</p></div>
+        <div class="do-card reveal"><span class="num">02</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><h3>AI AUTOMATION</h3><p>반복 업무를 덜어 주는<br>자동화 구축</p></div>
+        <div class="do-card reveal"><span class="num">03</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><h3>AI CONTENT</h3><p>브랜드를 키우는<br>콘텐츠 마케팅</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="works">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="label">WORKS</div><h2>직접 만들어<br>실제로 쓰고 있습니다</h2></div>
+        <p>말로만 가르치지 않습니다. 아래 시스템은 모두 직접 설계하고 만들어 현장에서 쓰고 있는 것들입니다.</p>
+      </div>
+
+      <div class="flow-title reveal"><span>흐름</span>생각을 쏟아내고, 지식으로 쌓고, 콘텐츠로 내보냅니다</div>
+      <div class="flow">
+        <article class="work reveal">
+          <span class="tag">생각 쏟아내기</span>
+          <h4>Voice-Typing</h4>
+          <div class="id">AI 음성 타이핑 · 회의 기록 앱</div>
+          <p class="motto">떠오르는 대로 생각을 쏟아내세요.<br>생각을 핵심으로 정리합니다.</p>
+          <details><summary>자세히</summary><ul><li>말하면 군말과 고친 부분을 정리해 바로 입력</li><li>회의를 녹음하면서 회의록을 바로 기록</li><li>나만의 사전으로 이름·용어 표기 고정</li></ul></details>
+        </article>
+        <span class="arrow a1">›</span>
+        <article class="work reveal">
+          <span class="tag">지식으로 쌓기</span>
+          <h4>프로네시스 <small>Phronesis</small></h4>
+          <div class="id">나만의 지식베이스를 구축하는 시스템</div>
+          <p class="desc">흩어진 메모, 자료, 대화를 모아 내 판단과 실천에 쓰는 지식으로 쌓아갑니다.</p>
+          <p class="note">Phronesis: 실천적 지혜</p>
+        </article>
+        <span class="arrow a2">›</span>
+        <article class="work reveal">
+          <span class="tag">콘텐츠로 내보내기</span>
+          <h4>콘텐츠 발행 자동화</h4>
+          <div class="id">나로부터 출발하는 콘텐츠 발행 자동화</div>
+          <p class="desc">내 경험과 생각을 재료로, AI가 글을 만들고 발행까지 이어줍니다.</p>
+        </article>
+      </div>
+
+      <div class="sys-title reveal"><span>시스템</span>일을 대신하고, 판단을 돕습니다</div>
+      <div class="sys">
+        <article class="work reveal">
+          <span class="tag">투자 판단</span>
+          <h4>Flip AI</h4>
+          <div class="id">AI 경매투자 분류·판단 시스템</div>
+          <p class="desc">경매 물건을 투자팀 기준으로 분류하고, 투자할 만한지 판단합니다.</p>
+          <details><summary>자세히</summary><ul><li>투자 적정성 판단: 팀의 투자 기준으로 물건마다 판단</li><li>근거 제시: 실거래 시세 비교, 권리 위험 체크리스트</li><li>팀 협업: 팀원별 후보·검토·제외 목록, 메모와 기록 공유</li></ul></details>
+        </article>
+        <article class="work reveal">
+          <span class="tag">홈페이지</span>
+          <h4>AI가 일하는 홈페이지</h4>
+          <div class="id">AI가 일하는 홈페이지 시스템</div>
+          <p class="desc">보여주기만 하는 홈페이지가 아니라, 반복되는 일을 AI가 자동으로 처리합니다.</p>
+        </article>
+        <article class="work reveal">
+          <span class="tag">실행 습관</span>
+          <h4>Wrapup-Task <small>랩업태스크</small></h4>
+          <div class="id">명언으로 깨우고, 할 일로 이어주는 앱</div>
+          <p class="desc">명언 한 줄로 마음을 깨우고, 그 힘으로 오늘 할 일을 끝까지 해내게 돕습니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block exp" id="exp">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="label">EXPERIENCE</div><h2>현장에서 가르치고<br>함께 만들어 왔습니다</h2></div>
+        <p>경영자부터 전문가, 개인까지. 바로 쓰는 AI를 전합니다.</p>
+      </div>
+      <div class="exp-list reveal">
+        <div class="exp-item"><b>포럼 강연</b><span>경영자 포럼, 인천 AI 자동화 포럼</span></div>
+        <div class="exp-item"><b>전문가 교육</b><span>부산 경영지도사, 공인노무사 대상 AI 실무 강의</span></div>
+        <div class="exp-item"><b>과정 운영</b><span>나로부터 출발하는 콘텐츠 발행 자동화 과정 (GPTers)</span></div>
+        <div class="exp-item"><b>맞춤 AI 실무 코칭</b><span>개인 &amp; 소그룹</span></div>
+        <div class="exp-item"><b>협업 네트워크</b><span>분야별 AX 전문가</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="box reveal">
+        <div>
+          <div class="label">CONTACT</div>
+          <h2>강의, 컨설팅, 자동화 구축.<br>편하게 물어보세요.</h2>
+          <p class="sub">어떤 업무에 AI를 쓰면 좋을지 모르셔도 괜찮습니다. 지금 하시는 일을 들려주시면 바로 쓸 수 있는 방법부터 제안드립니다.</p>
+          <div class="cta">
+            <a class="btn btn-dark" href="tel:01059092567">전화 걸기</a>
+            <a class="btn btn-line" href="mailto:joseph@blessalpha.com">이메일 보내기</a>
+            <a class="btn btn-line" href="/card/">전자명함</a>
+          </div>
+        </div>
+        <div class="clist">
+          <a class="crow" href="tel:01059092567"><span class="k">전화</span><span class="v">010-5909-2567</span></a>
+          <a class="crow" href="mailto:joseph@blessalpha.com"><span class="k">이메일</span><span class="v">joseph@blessalpha.com</span></a>
+          <a class="crow" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%8F%99%EA%B5%AC%20%EA%B3%A0%EB%8D%95%EB%A1%9C28%EA%B8%B8%2010-9" target="_blank" rel="noopener"><span class="k">주소</span><span class="v"><em>BLESS LAB</em>서울특별시 강동구 고덕로28길 10-9, 1층</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>블레스알파랩 BlessAlpha Lab · 소장 조하준</span><span>바로 쓰는 AI 교육과 업무 자동화 · © 2026</span></div>
+</footer>
+
+<nav class="mbar" aria-label="빠른 연락">
+  <a href="tel:01059092567" class="main"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+  <a href="sms:01059092567"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>문자</a>
+  <a href="/card/"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 10h6M6 14h4"/></svg>명함</a>
+</nav>
+
+<script>
+  const hd = document.querySelector('header');
+  addEventListener('scroll', () => hd.classList.toggle('scrolled', scrollY > 8), {passive:true});
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
