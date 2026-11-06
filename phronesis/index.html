@@ -84,7 +84,21 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stro
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#e8e8e8;color:#111;padding:7px 14px;border-radius:6px;font-size:12px;opacity:0;transition:opacity .35s;pointer-events:none;z-index:9}
 .lbl{pointer-events:none;paint-order:stroke;stroke:#101010;stroke-width:3px;stroke-linejoin:round}
 .clx{cursor:pointer}
-.brandL .vs .pubtag{color:#9cc3ff;letter-spacing:.06em;font-size:1.1em;margin-left:10px}</style>
+.brandL .vs .pubtag{color:#9cc3ff;letter-spacing:.06em;font-size:1.1em;margin-left:10px}
+/* 2026-11-06 Aside: 폰 화면 맞춤 + 두 손가락 확대 */
+#g{touch-action:none}
+@media (max-width:760px){
+ .top{height:52px}
+ .brandL{margin:0 6px 0 4px}.brandL .bt{font-size:21px}.brandL .vs{display:none}
+ .mid{padding:0 6px}.scope{display:none}.ttl{display:none}.grid9{display:none}.ava{margin:0 8px}
+ .search input{height:34px;font-size:16px;padding:0 38px 0 12px}
+ .heroT{transform:translate(-50%,-46%) scale(.6)!important;top:58%}body.hero .heroT{transform:translate(-50%,-50%) scale(.6)!important}
+ .heroS{transform-origin:top left;scale:.8;left:12px;top:12px}
+ .panel{left:52px;right:8px;width:auto;top:auto;bottom:8px;max-height:44%}
+ .gauge{display:none}
+ .helpbox{right:8px;left:52px;width:auto}
+}
+</style>
 </head>
 <body class="hero">
 <div class="top">
@@ -316,6 +330,16 @@ function zoomStep(now){if(!zt){zRaf=0;return;}const dt=Math.min(50,zLast?now-zLa
  if(!fin)zRaf=requestAnimationFrame(zoomStep);else{zRaf=0;zt=null;zLast=0;clearTimeout(zFull);render();}}
 svg.addEventListener('wheel',e=>{e.preventDefault();camUser=true;const r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,dy=e.deltaMode===1?e.deltaY*33:e.deltaY,base=zt?zt.k:view.k;
  zt={k:Math.min(4,Math.max(0.2,base*Math.exp(-dy*0.0016))),mx,my};if(!zRaf){zLast=0;zRaf=requestAnimationFrame(zoomStep);}},{passive:false});
+ // 2026-11-06 Aside: 두 손가락으로 벌리고 오므려 확대·축소 (폰·태블릿)
+ (function(){const pts=new Map();let pz=null;
+  const two=()=>{const a=[...pts.values()];return{x:(a[0].x+a[1].x)/2,y:(a[0].y+a[1].y)/2,d:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};};
+  const draw=()=>{if(visible.size+ghosts.size<=HEAVY)render();else{applyCam();clearTimeout(zFull);zFull=setTimeout(render,90);}};
+  svg.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pts.size===2){drag=null;svg.classList.remove('dragging');const m=two(),r=svg.getBoundingClientRect();pz={d:m.d,k:view.k,wx:(m.x-r.left-view.x)/view.k,wy:(m.y-r.top-view.y)/view.k};camUser=true;e.stopImmediatePropagation();}else if(pts.size>2)e.stopImmediatePropagation();},true);
+  svg.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pz&&pts.size>=2){e.stopImmediatePropagation();const m=two(),r=svg.getBoundingClientRect(),k1=Math.min(4,Math.max(0.2,pz.k*m.d/Math.max(1,pz.d)));view.k=k1;view.x=(m.x-r.left)-pz.wx*k1;view.y=(m.y-r.top)-pz.wy*k1;draw();}},true);
+  const end=e=>{if(!pts.has(e.pointerId))return;pts.delete(e.pointerId);if(pz){e.stopImmediatePropagation();if(pts.size<2){pz=null;drag=null;render();}}};
+  svg.addEventListener('pointerup',end,true);svg.addEventListener('pointercancel',end,true);
+ })();
+
 // 검색
 const q=document.getElementById('q'),sg=document.getElementById('sugg');
 // 공개판은 사람 이름을 '김*연'처럼 가린다. 실명(한글 3~4자)을 치면 같은 모양으로 가린 이름도 찾는다 (조셉 지시 2026-11-01)
